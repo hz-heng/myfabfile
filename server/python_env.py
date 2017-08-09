@@ -8,7 +8,7 @@ env.password = ""
 
 #安装Python3.5
 def _install_python():
-    print('安装Python3.5')
+    print('install Python3.5')
     run('yum -y groupinstall "Development Tools"')
     run('yum -y install openssl-devel bzip2-devel zlib-devel ncurese-devel sqlite-devel readline-devel')
     with settings(warn_only=True):
@@ -24,7 +24,7 @@ def _install_python():
 
 #安装virtualenv
 def _install_virtualenv():
-    print('安装virtualenv')
+    print('install virtualenv')
     with settings(warn_only=True):
         if run('type pip').failed:
             run('yum -y install python-setuptools')
