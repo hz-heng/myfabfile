@@ -14,13 +14,13 @@ def _install_python():
     with settings(warn_only=True):
         if run('type wget').failed:
             run('yum -y install wget')
-        run('wget -O /tmp/Python-3.5.1.tgz https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz')
-    run('tar -zxvf /tmp/Python-3.5.1.tgz -C /tmp/')
-    with cd('/tmp/Python-3.5.1'):
+        run('wget -O /tmp/Python.tgz https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz')
+    run('tar -zxvf /tmp/Python.tgz -C /tmp/')
+    with cd('/tmp/Python'):
         run('./configure --prefix=/var/python3')
         run('make && make install')
-    run('rm -f /tmp/Python-3.5.1.tgz')
-    run('rm -rf /tmp/Python-3.5.1')
+    run('rm -f /tmp/Python.tgz')
+    run('rm -rf /tmp/Python')
 
 #安装virtualenv
 def _install_virtualenv():
