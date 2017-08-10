@@ -15,7 +15,7 @@ def _install_python():
         if run('type wget').failed:
             run('yum -y install wget')
         run('wget -O /tmp/Python.tgz https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz')
-    run('tar -zxvf /tmp/Python.tgz -C /tmp/')
+    run('mkdir /tmp/Python && tar -zxvf /tmp/Python.tgz -C /tmp/Python --strip-components 1')
     with cd('/tmp/Python'):
         run('./configure --prefix=/var/python3')
         run('make && make install')
