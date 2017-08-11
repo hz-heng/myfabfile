@@ -30,9 +30,9 @@ def _set_redis_service():
     run('sed -i "2a\# chkconfig: 2345 80 90" /etc/rc.d/init.d/redis')
     run('sed -i "/^daemonize/c\daemonize yes" /etc/redis/6379.conf')
     run('sed -i "/^logfile/c\logfile /var/log/redis_6379.log" /etc/redis/6379.conf')
-    #run('chkconfig --add redis')
-    #run('chkconfig redis on')
-    #run('systemctl start redis')
+    run('chkconfig --add redis')
+    run('chkconfig redis on')
+    run('systemctl start redis')
     
 
 #主任务
